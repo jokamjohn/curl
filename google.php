@@ -19,13 +19,19 @@ curl_setopt($curl, CURLOPT_HEADER, false);
 //Step 3: Get the result.
 $result = curl_exec($curl);
 
+//Curl information.
+$info = curl_getinfo($curl);
+
 //Step 4: close curl.
 curl_close($curl);
 
-//Step 5: error handlin.
+//Step 5: error handling.
 
-if ($result == false) {
+if ($result === FALSE) {
     echo "Curl error: " . curl_error($curl);
 } else {
-    echo $result;
+//    echo $result;
 }
+
+//Curl info.
+var_dump($info);
